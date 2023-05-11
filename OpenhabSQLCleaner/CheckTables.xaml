@@ -1,0 +1,19 @@
+﻿<Window x:Class="OpenhabSQLCleaner.CheckTables"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenhabSQLCleaner"
+        mc:Ignorable="d"
+        Title="CheckTables" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Grid Background="SkyBlue">
+        <Button x:Name="btnCheck" Content="Check" Click="BtnCheck_Click" HorizontalAlignment="Left" Height="24" Margin="10,10,10,10" VerticalAlignment="Top" Width="100"/>
+        <DataGrid x:Name="dgData" Margin="10,39,10,10" ItemsSource="{Binding}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Width="auto" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Table Name" Width="auto" Binding="{Binding TableName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="OpenhabSQLCleaner.TableMerger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OpenhabSQLCleaner"
+        mc:Ignorable="d"
+        Title="TableMerger" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="SkyBlue">
+        <StackPanel Margin="0,0,196,0">
+            <Label x:Name="lbCount" FontWeight="Bold" Width="400" HorizontalContentAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="26"/>
+            <ComboBox x:Name="cbOrig" SelectionChanged="CbOrig_SelectionChanged" Width="auto" Margin="10,10,10,0"/>
+            <ProgressBar x:Name="progBar" Height="20" Margin="10,10,10,0" />
+            <Label x:Name="lbInfo" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Height="30" Margin="10,10,10,10">
+                <TextBlock x:Name="tblLabel"></TextBlock>
+            </Label>
+        </StackPanel>
+        <Button x:Name="btnRunSQL" Click="BtnRunSQL_Click" Content="Merge" Margin="0,46,10,0" VerticalAlignment="Top" Height="22" HorizontalAlignment="Right" Width="181"/>
+    </Grid>
+</Window>
