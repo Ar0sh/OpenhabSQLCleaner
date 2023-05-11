@@ -25,6 +25,7 @@ namespace OpenhabSQLCleaner
     public partial class CleanSQLTables : Window
     {
         readonly TaskFactory taskFactory = new TaskFactory();
+        string years;
         public CleanSQLTables()
         {
             InitializeComponent();
@@ -32,6 +33,10 @@ namespace OpenhabSQLCleaner
 
         private void ConnectSQL()
         {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                progLabel.Content = "Initialize deletion of data...";
+            }));
             DataTable errors = new DataTable()
             { 
                 Columns = { "Error" }
@@ -57,7 +62,7 @@ namespace OpenhabSQLCleaner
                 tmpCon.Open();
                 try
                 {
-                    string query2 = $"delete from {row} where time<DATE_SUB(NOW(),INTERVAL 1 YEAR)";
+                    string query2 = $"delete from {row} where time<DATE_SUB(NOW(),INTERVAL " + years + " YEAR)";
                     var cmd2 = new MySqlCommand(query2, tmpCon);
                     cmd2.ExecuteNonQuery();
                 }
@@ -73,7 +78,7 @@ namespace OpenhabSQLCleaner
                 Dispatcher.BeginInvoke(new Action(() =>
                 {
                     progBar.Value = ((double)i / rows.Count()) * 100;
-                    progLabel.Content = row + ": Deleted data older than 1 year.";
+                    progLabel.Content = row.Substring(0, row.LastIndexOf("_")) + ": Deleted data older than " + years + " year.";
                 }));
                 Debug.WriteLine(row, "DONE");
                 i++;
@@ -81,11 +86,21 @@ namespace OpenhabSQLCleaner
                 Thread.Sleep(100);
             });
             Menus.mySqlConnection?.Close();
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                progBar.Value = 100;
+                progLabel.Content = "Finished";
+            }));
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             var task = taskFactory.StartNew(() => ConnectSQL());
+        }
+
+        private void CbYears_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            years = ((sender as ComboBox).SelectedItem as ComboBoxItem).Content as string;
         }
     }
 }

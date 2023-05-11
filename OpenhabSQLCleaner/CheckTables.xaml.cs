@@ -71,20 +71,6 @@ namespace OpenhabSQLCleaner
                     tmpCon.Close();
                 }
             });
-            //foreach(var table in tables)
-            //{
-            //    if(table != "items")
-            //    {
-            //        query = "SELECT * FROM OpenHAB2." + table + " order by time desc LIMIT 1;";
-            //        cmd = new MySqlCommand(query, Menus.mySqlConnection);
-            //        reader = cmd.ExecuteReader();
-            //        if(!reader.HasRows)
-            //        {
-            //            dataTable.Rows.Add(new string[] { table.Split('_').Last<string>().TrimStart('0'), table });
-            //        }
-            //        reader.Close();
-            //    }
-            //}
         }
 
         private void BtnCheck_Click(object sender, RoutedEventArgs e)

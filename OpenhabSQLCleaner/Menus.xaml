@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenhabSQLCleaner"
         mc:Ignorable="d"
-        Title="Menus" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Menu" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="SkyBlue">
         <Button x:Name="btnTableMerger" Click="BtnTableMerger_Click" Content="Table Merger" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="38" Width="100"/>
         <Button x:Name="btnCleanSQLtables" Click="BtnCleanSQLtables_Click" Content="Clean SQL Tables" Margin="115,10,10,0" VerticalAlignment="Top" Height="38" Width="100"/>
-        <Button x:Name="btnCheckTables" Click="BtnCheckTables_Click" Content="Check SQL Tables" Margin="115,53,0,10" VerticalAlignment="Top" Height="38" HorizontalAlignment="Left" Width="100"/>
+        <Button x:Name="btnCheckTables" Click="BtnCheckTables_Click" Content="Check SQL Tables" Margin="0,53,0,10" VerticalAlignment="Top" Height="38" HorizontalAlignment="Center" Width="100"/>
 
     </Grid>
 </Window>
