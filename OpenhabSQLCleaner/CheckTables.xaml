@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenhabSQLCleaner"
         mc:Ignorable="d"
-        Title="CheckTables" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+        Title="Check Tables" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid Background="SkyBlue">
         <Button x:Name="btnCheck" Content="Check" Click="BtnCheck_Click" HorizontalAlignment="Left" Height="24" Margin="10,10,10,10" VerticalAlignment="Top" Width="100"/>
         <DataGrid x:Name="dgData" Margin="10,39,10,10" ItemsSource="{Binding}" AutoGenerateColumns="False">

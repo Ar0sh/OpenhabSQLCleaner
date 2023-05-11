@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenhabSQLCleaner"
         mc:Ignorable="d"
-        Title="TableMerger" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Table Merger" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="SkyBlue">
         <StackPanel Margin="0,0,196,0">
             <Label x:Name="lbCount" FontWeight="Bold" Width="400" HorizontalContentAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="26"/>

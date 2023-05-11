@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenhabSQLCleaner"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="WidthAndHeight" MaxHeight="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Clean SQL Tables" SizeToContent="WidthAndHeight" MaxHeight="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="SkyBlue">
         <Label Content="Years:" Margin="10,44,472,41" VerticalContentAlignment="Center" />
         <ComboBox x:Name="cbYears" Margin="54,50,417,47" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="CbYears_SelectionChanged">
